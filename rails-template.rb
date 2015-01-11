@@ -41,7 +41,6 @@ EOF"
 
 after_bundle do
   run 'bundle exec guard init rspec'
-  run 'bundle binstub rails'
   git :init
   git add: "."
   git commit: %Q{ -m 'Initial commit' }
