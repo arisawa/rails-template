@@ -1,7 +1,8 @@
+gem 'config'
+
 gem_group :development, :test do
   gem 'factory_girl_rails'
   gem 'forgery'
-  gem 'dotenv-rails'
 end
 
 gem_group :development do
@@ -137,5 +138,9 @@ git commit: "-a -m 'rspec:install'"
 run 'bundle exec guard init'
 git add: '.'
 git commit: "-a -m 'guard init'"
+
+run 'bundle exec spring binstub --all'
+git add: '.'
+git commit: "-a -m 'spring binstub --all'"
 
 rails_command 'db:create'

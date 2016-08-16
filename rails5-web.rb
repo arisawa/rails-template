@@ -141,4 +141,8 @@ run 'bundle exec guard init'
 git add: '.'
 git commit: "-a -m 'guard init'"
 
+run 'bundle exec spring binstub --all'
+git add: '.'
+git commit: "-a -m 'spring binstub --all'"
+
 rails_command 'db:create'
