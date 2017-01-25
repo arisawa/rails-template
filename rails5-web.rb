@@ -3,11 +3,18 @@ gem 'slim-rails'
 gem 'simple_form'
 
 gem_group :development, :test do
+  gem 'byebug', platform: :mri
   gem 'factory_girl_rails'
   gem 'forgery'
+  gem 'rspec-rails'
+  gem 'rspec-request_describer'
 end
 
 gem_group :development do
+  gem 'listen'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'hirb'
@@ -19,8 +26,6 @@ gem_group :development do
   gem 'rubocop', require: false
   gem 'tapp'
   gem 'view_source_map'
-  gem 'rspec-rails'
-  gem 'rspec-request_describer'
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-bundler'
@@ -38,7 +43,10 @@ gem_group :test do
   gem 'autodoc'
   gem 'webmock'
   gem 'timecop'
+  gem 'rspec_junit_formatter'
 end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 file '.rubocop.yml', <<-CODE
 Rails:
@@ -58,9 +66,10 @@ AllCops:
     - "tmp/**/*"
     - "config/initializers/*"
     - "*file"
+    - "Gemfile"
 
 Metrics/LineLength:
-  Max: 120
+  Max: 100
   Exclude:
     - "app/views/**/*"
     - "config/**/*.rb"
