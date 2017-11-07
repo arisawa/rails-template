@@ -4,7 +4,7 @@ gem 'simple_form'
 
 gem_group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'forgery'
   gem 'rspec-rails'
   gem 'rspec-request_describer'
