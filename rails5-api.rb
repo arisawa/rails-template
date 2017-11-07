@@ -1,11 +1,18 @@
 gem 'config'
 
 gem_group :development, :test do
+  gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
   gem 'forgery'
+  gem 'rspec-rails'
+  gem 'rspec-request_describer'
 end
 
 gem_group :development do
+  gem 'listen'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'hirb'
@@ -17,8 +24,6 @@ gem_group :development do
   gem 'rubocop', require: false
   gem 'tapp'
   gem 'view_source_map'
-  gem 'rspec-rails'
-  gem 'rspec-request_describer'
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-bundler'
